@@ -1,3 +1,20 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for your website
+
+# Global rule: Allow all web crawlers to index everything except the sections defined below
 User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /private/
+Disallow: /search
+
+# Allow Googlebot to index everything, even things disallowed for other crawlers
+User-agent: Googlebot
 Disallow:
+
+# Specific block for certain crawlers
+User-agent: BadBot
+Disallow: /
+
+# Sitemap to help search engines find all URLs
+Sitemap: https://veoveneht.my.id/sitemap.xml
