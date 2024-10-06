@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "proxy": "http://localhost:5000",
-  "homepage": "https://lisanshidqifarizan.github.io/",
+  "homepage": "https://veoveneht.my.id/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
