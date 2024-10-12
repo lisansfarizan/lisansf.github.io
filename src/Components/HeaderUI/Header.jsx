@@ -5,7 +5,7 @@ const Header = () => {
     return(
         <header>
             <nav>
-                <p id="logo">LISAN<span>_</span></p>
+                <p id="logo">veoveneht<span>_</span></p>
                 <div id="navlink">
                     <a href='/'>Home</a>
                     <a href='/store'>Store</a>
