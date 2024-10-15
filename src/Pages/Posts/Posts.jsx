@@ -1,44 +1,27 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import data from "../../data";
 
 const Posts = () => {
-    const [post, setPost] = useState([]);
-    const [author, setAuthor] = useState([]);
-    const location = useLocation();
+    const { postUrl } = useParams();  // Mengambil parameter dari URL
+    const post = data.flatMap(user => user.post).find(post => post.link === `/${postUrl}`);
+    const author = data.find(user => user.post.includes(post))?.name;
     
-    useEffect(() => {
-        fetch('/da.json')
-        .then(x => x.json())
-        .then(x => {
-            const cariPostingan = x.flatMap(user=>user.post).find(post => post.link === location.pathname )
-            setPost(cariPostingan)
-            const cariAuthor = x.find(user => user.post.includes(cariPostingan))
-            setAuthor(cariAuthor?.name || "Tidak Jelas");
-        })
-        .catch(err => console.error('Nggk ngeFetch', err))
-    }, [location.pathname])
+    if (!post) {
+        return <h2>Post not found</h2>;
+    }
+
     return (
+        <>
+        <Helmet title={`${post.title} | VEO Veneht`} />
         <div className="main-wrapper">
-            {post && author ? (
-                
-                <>
-                <Helmet title={`${post.title} | VEO Veneht`}/>
-                <div className="post">
-                    <p>{post.title}</p>
-                    <p>{post.desc}</p>
-                    <p>{author}</p>
-                </div>
-                </>
-            ) : (
-                <>
-                <div className="post">
-                    <p>Halaman gk Keliatan Tol</p>
-                </div>
-                </>
-            )
-            }
+            <div className="post">
+            <p className="post-title">{post.title}</p><br/>
+            <p>{post.desc}</p>
+            <p>{author}</p>
+            </div>
         </div>
+        </>
     );
 };
 

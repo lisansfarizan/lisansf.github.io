@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import Header from './Components/HeaderUI/Header.jsx';
 import Home from './Components/Home.jsx';
@@ -41,7 +41,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/cookies' element={<Cookies />} />
-            <Route path={location.pathname} element={<Posts />} />
+            <Route path='/:postUrl' element={<Posts />} />
         </Routes>
         </main>
         {!(isLogin || isDashboard) && <Footer/> }

@@ -1,4 +1,4 @@
-[
+const user = [
     {
     "name": "Lisan Shidqi Farizan",
     "age": 2003,
@@ -51,3 +51,5 @@
         "post": []
     }
 ]
+
+export default user;

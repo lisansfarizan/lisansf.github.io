@@ -1,33 +1,23 @@
-import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
+import data from '../data';
 
 const Home = () => {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch('/da.json')
-        .then(x => x.json())
-        .then(x => {
-            setData(x);
-        } )
-        .catch(err => console.error('Error Fetching', err))
-    }, [])
-
-
+    const post = data.flatMap(user => user.post);
     return(
         <div className="main-wrapper">
             <div id="post">
-            {data && data.map(user => (
-                user.post.map((x, index) => (
+            {
+                post.map((post, index) => (
                     <div key={index} className="cards">
-                        <p><a href={x.link} className="cards-title">{x.title}</a></p>
-                        <p>{x.shortdesc}</p>
+                        <p><Link to={post.link} className="cards-title">{post.title}</Link></p>
+                        <p>{post.shortdesc}</p>
                     </div>
                 ))
-            ))}
+            }
             </div>
             <div id="sidebar"></div>
         </div>
     )
 }
 
-export default Home
+export default Home;
