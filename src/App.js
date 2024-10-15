@@ -13,6 +13,7 @@ import Footer from './Components/Footer.jsx';
 import './App.css';
 
 function App() {
+
   const location = useLocation() 
   const isLogin = location.pathname === '/login';
   const isDashboard = location.pathname === '/dashboard';
@@ -36,6 +37,9 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/cookies' element={<Cookies />} />
+            {/** Link for Slug  */
+
+            }
             <Route path={location.pathname} element={<Posts />} />
         </Routes>
         </main>

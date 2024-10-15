@@ -1,45 +1,45 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-const ToramOnlineGuide = () => {
-    const [post, setPost] = useState([]);
+const Posts = () => {
+    const [post, setPost] = useState('');
+    const [author, setAuthor] = useState('');
     const location = useLocation();
     
     useEffect(() => {
         fetch('/da.json')
         .then(x => x.json())
         .then(x => {
-            const link = x.flatMap(user => user.post).find(p => p.link === location.pathname)
-            
-            link ? setPost(link) : setPost(null);
+            const cariPostingan = x.flatMap(user=>user.post).find(post => post.link === location.pathname )
+            setPost(cariPostingan)
+            const cariAuthor = x.find(user => user.post.includes(cariPostingan))
+            setAuthor(cariAuthor?.name || "Tidak Jelas");
         })
-        .catch(err => console.error('Can\'t Fetch a data', err))
+        .catch(err => console.error('Nggk ngeFetch', err))
     }, [location.pathname])
 
-    return(
-        <>
+    return (
         <div className="main-wrapper">
-        {post ? (
-            <>
-            <Helmet title={`${post.title} | VEO Veneht`}/>
-            <div className="post">
-                <p className="title">{post.title}</p>
-                <p>{post.desc}</p>
-            </div>
-            </>
-        ) : (
-            <>
-            <Helmet title={`Something went wrong! | VEO Veneht`}/>
-            <div className="post">
-                <p>Sorry we can't find that :(</p>
-            </div>
-            </>
-        )
-        }
+            {post && author ? (
+                <>
+                <Helmet title={`${post.title} | VEO Veneht`}/>
+                <div className="post">
+                    <p>{post.title}</p>
+                    <p>{post.desc}</p>
+                    <p>{author}</p>
+                </div>
+                </>
+            ) : (
+                <>
+                <div className="post">
+                    <p>Halaman gk Keliatan Tol</p>
+                </div>
+                </>
+            )
+            }
         </div>
-        </>
-    )
-}
+    );
+};
 
-export default ToramOnlineGuide
+export default Posts;
