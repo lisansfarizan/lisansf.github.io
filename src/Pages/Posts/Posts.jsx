@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const Posts = () => {
-    const [post, setPost] = useState('');
-    const [author, setAuthor] = useState('');
+    const [post, setPost] = useState([]);
+    const [author, setAuthor] = useState([]);
     const location = useLocation();
     
     useEffect(() => {
@@ -18,10 +18,10 @@ const Posts = () => {
         })
         .catch(err => console.error('Nggk ngeFetch', err))
     }, [location.pathname])
-
     return (
         <div className="main-wrapper">
             {post && author ? (
+                
                 <>
                 <Helmet title={`${post.title} | VEO Veneht`}/>
                 <div className="post">

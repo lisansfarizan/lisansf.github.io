@@ -11,6 +11,7 @@ import Cookies from './Components/CookieDeclaration.jsx';
 import Footer from './Components/Footer.jsx';
 
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
       return <Header/>
     }
   }
+  useEffect(() => {
+    console.log(location.pathname)
+  })
 
   return (
     <div className="App">
@@ -37,7 +41,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/cookies' element={<Cookies />} />
-            <Route path='/post' element={<Posts />} />
+            <Route path={location.pathname} element={<Posts />} />
         </Routes>
         </main>
         {!(isLogin || isDashboard) && <Footer/> }
