@@ -6,10 +6,6 @@ const Posts = () => {
     const { postUrl } = useParams();  // Mengambil parameter dari URL
     const post = data.flatMap(user => user.post).find(post => post.link === `/${postUrl}`);
     const author = data.find(user => user.post.includes(post))?.name;
-    
-    if (!post) {
-        return <h2>Post not found</h2>;
-    }
 
     return (
         <>
