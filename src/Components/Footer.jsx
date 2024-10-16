@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     const today = new Date()
@@ -6,12 +7,12 @@ const Footer = () => {
         <footer>
             <div id="foot-wrap">
                 <div id="foot-link">
-                    <a href='/'>Home</a>
-                    <a href='/store'>Store</a>
-                    <a href='/contact'>Contact</a>
-                    <a href='/about'>About</a>
-                    <a href='/sitemap'>Sitemap</a>
-                    <a href='/privacy-policy'>Privacy Policy</a>
+                    <Link to='/'>Home</Link>
+                    <Link to='/store'>Store</Link>
+                    <Link to='/contact'>Contact</Link>
+                    <Link to='/about'>About</Link>
+                    <Link to='/sitemap'>Sitemap</Link>
+                    <Link to='/privacy-policy'>Privacy Policy</Link>
                 </div>
                 <p>&copy;{today.getFullYear()} Alright Reserved.</p>
             </div>

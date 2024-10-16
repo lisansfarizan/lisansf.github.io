@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [showSlide, setShowSlide] = useState('0%')
@@ -7,21 +8,21 @@ const Header = () => {
             <nav>
                 <p id="logo">veoveneht<span>_</span></p>
                 <div id="navlink">
-                    <a href='/'>Home</a>
-                    <a href='/store'>Store</a>
+                    <Link to='/'>Home</Link>
+                    <Link to='/store'>Store</Link>
                 </div>
                 <p id="menu" onClick={() => {
                     setShowSlide(showSlide === '0%' ? '100%' : '0%');
-                }}><a href>Menu</a></p>
+                }}><Link href>Menu</Link></p>
                 <div id="slidebar" style={{width: `${showSlide}`}}>
                     <p id="logo">LISAN<span>_</span></p>
                     <div>
-                        <a href="/">Home</a>
-                        <a href="/store">Store</a>
+                        <Link href="/">Home</Link>
+                        <Link href="/store">Store</Link>
                     </div>
-                    <a  id="close" onClick={() => {
+                    <Link id="close" onClick={() => {
                     setShowSlide(showSlide === '100%' ? '0%' : '100%');
-                }} href>Close</a>
+                }} href>Close</Link>
                 </div>
             </nav>
         </header>

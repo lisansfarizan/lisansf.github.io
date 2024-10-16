@@ -12,6 +12,7 @@ import Footer from './Components/Footer.jsx';
 
 import './App.css';
 import { useEffect } from 'react';
+import About from './Components/About.jsx';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/about' element={<About />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/cookies' element={<Cookies />} />
             <Route path='/:postUrl' element={<Posts />} />
