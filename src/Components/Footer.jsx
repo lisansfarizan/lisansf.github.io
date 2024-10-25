@@ -8,6 +8,7 @@ const Footer = () => {
             <div id="foot-wrap">
                 <div id="foot-link">
                     <Link to='/'>Home</Link>
+                    <Link to='/login'>Login</Link>
                     <Link to='/store'>Store</Link>
                     <Link to='/contact'>Contact</Link>
                     <Link to='/about'>About</Link>

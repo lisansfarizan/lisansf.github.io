@@ -43,7 +43,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/cookies' element={<Cookies />} />
-            <Route path='/:postUrl' element={<Posts />} />
+            <Route path='/post/:postUrl' element={<Posts />} />
         </Routes>
         </main>
         {!(isLogin || isDashboard) && <Footer/> }

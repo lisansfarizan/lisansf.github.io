@@ -9,7 +9,7 @@ const Home = () => {
             {
                 post.map((post, index) => (
                     <div key={index} className="cards">
-                        <p><Link to={post.link} className="cards-title">{post.title}</Link></p>
+                        <p><Link to={`/post${post.link}`} className="cards-title">{post.title}</Link></p>
                         <p>{post.shortdesc}</p>
                     </div>
                 ))
