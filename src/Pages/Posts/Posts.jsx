@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import data from "../../data";
+import data from "../../data.js";
 
 const Posts = () => {
     const { postUrl } = useParams();  // Mengambil parameter dari URL
@@ -10,13 +10,14 @@ const Posts = () => {
     return (
         <>
         <Helmet title={`${post.title} | VEO Veneht`} />
-        <div className="main-wrapper">
             <div className="post">
-            <p className="post-title">{post.title}</p><br/>
-            <p>{post.desc}</p>
-            <p>{author}</p>
+                <p className="post-title">{post.title}</p><br/>
+                <p>{post.desc}</p>
+                <p>By {author}</p>
             </div>
-        </div>
+            <div className="sidebar">
+                <p>ini sidenya</p>
+            </div>
         </>
     );
 };

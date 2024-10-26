@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 
+import data from '../data.js'
+
 const Login = () => {
     const [users, setUsers] = useState([]);
     const [username, setUsername] = useState('');
@@ -9,21 +11,14 @@ const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        
         if (localStorage.getItem('isLogin') === 'true') {
             navigate('/dashboard')
             alert(`Anda Telah Login!`)
         }
-
-        fetch('/da.json')
-        .then(res => {
-            if(!res.ok){
-                throw new Error('failed to fetch')
-            }
-            return res.json();
-        })
-        .then(data => setUsers(data))
-        .catch(err => console.error('error fetch data', err));
-    });
+        
+        setUsers(data)
+    }, [navigate, users]);
 
     const onLogin = (e) => {
         e.preventDefault();
@@ -48,7 +43,6 @@ const Login = () => {
     return (
         <>
         <Helmet title='Login | VEO Veneht'/>
-        <div className="main-wrapper">
             <div id='login-form'>
                 <form onSubmit={onLogin}>
                     <div id='input-wrapper'>
@@ -76,7 +70,6 @@ const Login = () => {
                     </div>
                 </form>
             </div>
-        </div>
         </>
     );
 };

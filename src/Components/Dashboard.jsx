@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import data from '../data.js';
+
 const Dashboard = () => {
-    const [users, setUsers] = useState([]);
+    const [user, setUsers] = useState([]);
     const [currentUser, setCurrentUser] = useState(null);
     const [isLogin, setIsLogin] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         // Import data
+        setUsers(data)
+        
         fetch('/da.json')
         .then(res => res.json())
         .then(data => setUsers(data))
@@ -23,10 +27,10 @@ const Dashboard = () => {
             alert('belum login')
         } else {
             const username = localStorage.getItem('user')
-            const loginUser = users.find(user => user.username === username)
+            const loginUser = user.find(user => user.username === username)
             setCurrentUser(loginUser)
         }
-    }, [users, navigate])
+    }, [user, navigate])
 
     if (isLogin === '') {
         navigate('/login');
@@ -36,7 +40,6 @@ const Dashboard = () => {
 
     return (
     <>
-    <div className='main-wrapper'>
         <div id='side-dashboard'>
             <div id='menu-and-profile'>
             <p>Tema</p>
@@ -48,7 +51,7 @@ const Dashboard = () => {
             )}
             </div>
         </div>
-        <div id='post-card'>
+        <div id='dashboard-post'>
         {
             currentUser && (
                 currentUser.post.map((x, index) =>(
@@ -59,7 +62,6 @@ const Dashboard = () => {
             ))
         )}
         </div>
-    </div>
     </>
     );
 }

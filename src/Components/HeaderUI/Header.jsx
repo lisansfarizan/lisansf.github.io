@@ -15,7 +15,7 @@ const Header = () => {
                     setShowSlide(showSlide === '0%' ? '100%' : '0%');
                 }}><Link href>Menu</Link></p>
                 <div id="slidebar" style={{width: `${showSlide}`}}>
-                    <p id="logo">LISAN<span>_</span></p>
+                    <p id="logo">veoveneht<span>_</span></p>
                     <div>
                         <Link href="/">Home</Link>
                         <Link href="/store">Store</Link>

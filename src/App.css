@@ -13,7 +13,7 @@ header, footer {
 
 nav {
   box-sizing: border-box;
-  min-width: 350px;
+  min-width: 250px;
   max-width: 1140px;
   width: 1140px;
   height: 100%;
@@ -27,6 +27,7 @@ nav {
 
 #logo {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 #logo, #foot-wrap p {
@@ -84,18 +85,19 @@ nav {
 main {
   display: flex;
   justify-content: center;
+  background-color: var(--secondary-color);
 }
 
 .main-wrapper {
   box-sizing: border-box;
   display: flex;
   gap: 2vh;
-  min-width: 350px;
   width: 1140px;
   max-width: 1140px;
   padding: 2vh;
 }
 
+/** Login Form */
 #login-form {
   width: 100%;
   margin: 1rem 0rem;
@@ -147,22 +149,61 @@ form {
   border-right: solid rgb(205, 205, 205) 1px;
 }
 
-.post {
-  width: 100%;
-  padding: 1vh;
-}
-
-#post-card {
+#dashboard-post {
   width: 100%;
   border-left: solid rgb(205, 205, 205) 1px;
 }
 
+/** Cards Section */
+#post-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
 .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
   padding: 2vh;
-  margin: .5vh;
   border-radius: 1rem;
   filter: drop-shadow(0px 0px 1px);
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
+}  
+
+.cards-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.cards-title:hover {
+  color: royalblue;
+}
+
+.wrap-shortdesc img {
+  min-width: 250px;
+  width: 300px;
+  transition: .3s;
+  opacity: .5;
+}
+
+.wrap-shortdesc img:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.wrap-shortdesc {
+  display: flex;
+  gap: 1vh;
+}  
+
+.shortdesc {
+  width: 100%;
+}
+
+/** Post Section */
+.post {
+  width: 100%;
 }
 
 /** End Main */
@@ -196,6 +237,46 @@ footer {
 
 /** End Footer */
 
+/*? TABLET */
+@media screen and (max-width: 765px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+  
+  /** Cards Section */
+  .cards-title {
+    font-size: 1.8em;
+  }
+
+  /** Footer Section */
+  footer {
+    height: 100%;
+  }
+  #foot-wrap p {
+    margin: 0;
+  }
+  #foot-wrap {
+    flex-direction: column;
+  }
+  #foot-link {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards-title {
+    font-size: 1.4em;
+  }
+  
+  .wrap-shortdesc {
+    flex-direction: column;
+  }
+  
+  .wrap-shortdesc img {
+    width: 100%;
+  }
+}
+
 /*? PHONE */
 @media screen and (max-width: 425px) {
   #navlink {
@@ -205,21 +286,8 @@ footer {
   #menu {
     display: block;
   }
-
-  #foot-link {
-    justify-content: center;
-  }
-}
-
-/*? TABLET */
-@media screen and (max-width: 765px) {
-  footer {
-    height: 100%;
-  }
-  #foot-wrap p {
-    margin: 0;
-  }
-  #foot-wrap {
-    flex-direction: column;
+  
+  .cards-title {
+    font-size: 1.2em;
   }
 }

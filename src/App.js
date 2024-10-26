@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 
 import Header from './Components/HeaderUI/Header.jsx';
 import Home from './Components/Home.jsx';
-import Login from './Components/Login.jsx';
+import Admin from './Components/Admin.jsx';
 import LoginHeader from './Components/HeaderUI/LoginHeader.jsx';
 import DashboardHeader from './Components/HeaderUI/DashboardHeader.jsx';
 import Dashboard from './Components/Dashboard.jsx';
@@ -37,14 +37,16 @@ function App() {
     <div className="App">
         {PickHeader()}
         <main>
-        <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/cookies' element={<Cookies />} />
-            <Route path='/post/:postUrl' element={<Posts />} />
-        </Routes>
+          <div className="main-wrapper">
+          <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/admin' element={<Admin />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/cookies' element={<Cookies />} />
+              <Route path='/post/:postUrl' element={<Posts />} />
+          </Routes>
+          </div>
         </main>
         {!(isLogin || isDashboard) && <Footer/> }
     </div>
