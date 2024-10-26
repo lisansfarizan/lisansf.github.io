@@ -159,9 +159,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1vh;
+  width: 100%;
 }
 
-.cards {
+.cards, #sidebar {
   display: flex;
   flex-direction: column;
   gap: 1vh;
@@ -169,11 +170,12 @@ form {
   border-radius: 1rem;
   filter: drop-shadow(0px 0px 1px);
   background-color: var(--primary-color);
-}  
+}
 
 .cards-title {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 100;
+  text-decoration: underline;
 }
 
 .cards-title:hover {
@@ -183,6 +185,7 @@ form {
 .wrap-shortdesc img {
   min-width: 250px;
   width: 300px;
+  height: 100%;
   transition: .3s;
   opacity: .5;
 }
@@ -199,6 +202,11 @@ form {
 
 .shortdesc {
   width: 100%;
+}
+
+#sidebar {
+  width: 300px;
+  box-sizing: border-box;
 }
 
 /** Post Section */
@@ -237,15 +245,20 @@ footer {
 
 /** End Footer */
 
-/*? TABLET */
-@media screen and (max-width: 765px) {
-  .main-wrapper {
+@media screen and (max-width: 850px) {
+  .wrap-shortdesc {
     flex-direction: column;
+    align-items: center;
   }
-  
-  /** Cards Section */
   .cards-title {
     font-size: 1.8em;
+  }
+}
+
+/*? TABLET */
+@media screen and (max-width: 700px) {
+  .main-wrapper {
+    flex-direction: column;
   }
 
   /** Footer Section */
@@ -264,6 +277,7 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+
   .cards-title {
     font-size: 1.4em;
   }
