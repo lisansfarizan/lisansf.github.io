@@ -3,6 +3,16 @@
   --secondary-color: aliceblue;
 }
 
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ads {
+  text-align: center;
+}
+
 /** Header */
 header, footer {
   width: 100%;

@@ -13,6 +13,7 @@ import Footer from './Components/Footer.jsx';
 import './App.css';
 import { useEffect } from 'react';
 import About from './Components/About.jsx';
+import Ads from './Components/SidebarComponents/Ads.jsx';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
         {PickHeader()}
+        <Ads/>
         <main>
           <div className="main-wrapper">
           <Routes>
@@ -48,6 +50,7 @@ function App() {
           </Routes>
           </div>
         </main>
+        <Ads/>
         {!(isLogin || isDashboard) && <Footer/> }
     </div>
   );
