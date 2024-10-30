@@ -10,6 +10,7 @@
 }
 
 .ads {
+  width: 100%;
   text-align: center;
 }
 
@@ -22,11 +23,11 @@ header, footer {
 }
 
 nav {
-  box-sizing: border-box;
+  z-index: 1;
   min-width: 250px;
   max-width: 1140px;
   width: 1140px;
-  height: 100%;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +42,7 @@ nav p#logo, #slidebar #logo p {
 }
 
 nav p#logo, #foot-wrap p {
-  margin: 0vh auto 0vh 0vh;
+  margin: 0 auto 0 0;
 }
 
 #logo span{
@@ -122,15 +123,15 @@ nav p#logo, #foot-wrap p {
 main {
   display: flex;
   justify-content: center;
+  width: 100%;
   background-color: var(--secondary-color);
 }
 
 .main-wrapper {
-  box-sizing: border-box;
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
   width: 1140px;
-  max-width: 1140px;
+  gap: 1rem;
   padding: 1rem;
 }
 
@@ -180,37 +181,29 @@ form {
   width: 4rem;
 }
 
-/** Dashboard */
-#side-dashboard {
-  padding: 1rem;
-  border-right: solid rgb(205, 205, 205) 1px;
-}
-
-#dashboard-post {
-  width: 100%;
-  border-left: solid rgb(205, 205, 205) 1px;
-}
-
 /** Cards Section */
 #post-cards {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
   width: 100%;
 }
 
-.cards, #sidebar {
+#post-cards, #sidebar .sticky {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.cards, .sidebar-tags, #support-us, .post {
   display: flex;
   flex-direction: column;
   gap: .5rem;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: .3rem;
   filter: drop-shadow(0px 0px 1px);
   background-color: var(--primary-color);
 }
 
-.cards-title {
-  font-size: 2rem;
+.cards-title, .post-title {
+  font-size: 1.8rem;
   font-weight: 100;
   text-decoration: underline;
 }
@@ -221,7 +214,7 @@ form {
 
 .wrap-shortdesc img {
   min-width: 250px;
-  width: 250px;
+  width: 300px;
   height: 100%;
   transition: .3s;
   opacity: .5;
@@ -241,9 +234,10 @@ form {
   width: 100%;
 }
 
-#sidebar {
-  width: 300px;
-  box-sizing: border-box;
+#sidebar .sticky{
+  position: sticky;
+  top: 1rem;
+  text-align: center;
 }
 
 .sidebar-tags {
@@ -257,6 +251,7 @@ form {
 
 .sidebar-tags div {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -287,7 +282,7 @@ footer {
   align-items: center;
   width: 1100px;
   max-width: 1100px;
-  padding: 2vh 2vh;
+  padding: 1rem 4rem;
   border-top: solid black 2px;
   background-color: var(--primary-color);
 }
@@ -304,13 +299,13 @@ footer {
 /** End Footer */
 
 @media screen and (max-width: 850px) {
-  .cards-title {
-    font-size: 1.8em;
+  .wrap-shortdesc img {
+    width: 250px;
   }
 }
 
-/*? TABLET */
-@media screen and (max-width: 700px) {
+/* ? TABLET */
+@media screen and (max-width: 768px) {
   .main-wrapper {
     flex-direction: column;
     padding: 1.5rem;
@@ -325,7 +320,7 @@ footer {
     width: 100%;
   }
 
-  /** Footer Section */
+  * Footer Section
   footer {
     height: 100%;
   }
@@ -340,8 +335,8 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .cards-title {
+@media screen and (max-width: 560px) {
+  .cards-title, .post-title {
     font-size: 1.3em;
   }
   
@@ -354,7 +349,7 @@ footer {
   }
 }
 
-/*? PHONE */
+/* ? PHONE */
 @media screen and (max-width: 425px) {
   #navlink {
     display: none;
@@ -364,7 +359,7 @@ footer {
     display: block;
   }
   
-  .cards-title {
+  .cards-title, .post-title {
     font-size: 1.2em;
   }
 }

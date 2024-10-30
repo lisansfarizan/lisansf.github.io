@@ -6,9 +6,11 @@ export default function Sidebar() {
     return (
         <>
         <div id="sidebar">
-            <SupportCard/>
-            <Tags/>
-            <Ads/>
+            <div className='sticky'>
+                <SupportCard/>
+                <Tags/>
+                <Ads/>
+            </div>
         </div>
         </>
     )

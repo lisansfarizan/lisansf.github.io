@@ -13,7 +13,8 @@ const Posts = () => {
         <>
         <Helmet title={`${post.title} | VEO Veneht`} />
             <div className="post">
-                <p className="post-title">{post.title}</p><br/>
+                <p className="post-title">{post.title}</p>
+                <img src={post.img} href alt={post.title}/>
                 <Ads/>
                 <p>By {author}</p>
                 <p>{post.desc}</p>
