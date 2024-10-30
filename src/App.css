@@ -39,14 +39,16 @@ nav p#logo, #foot-wrap p {
   animation: blink 1s infinite step-start;
 }
 
+#navlink a, #foot-link a, .sidebar-tags div a{
+  margin: .1rem;
+  padding: .2rem;
+  cursor: pointer;
+}
+
 @keyframes blink {
   50% {
     opacity: 0;
   }
-}
-
-#navlink a {
-  margin: .5rem;
 }
 
 #menu {
@@ -234,6 +236,29 @@ form {
   box-sizing: border-box;
 }
 
+.sidebar-tags {
+  display: flex;
+  flex-direction: column;
+}
+
+#title-tags, #support-us p {
+  font-size: 1.4rem;
+}
+
+.sidebar-tags div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar-tags div a {
+  background-color: rgb(230, 230, 230);
+  transition: .3s;
+}
+
+.sidebar-tags div a:hover {
+  background-color: rgb(205, 205, 205);
+}
+
 /** Post Section */
 .post {
   width: 100%;
@@ -264,8 +289,6 @@ footer {
 #foot-link {
   display: flex;
   flex-wrap: wrap;
-  gap: 1vh;
-  margin: 1vh 0vh;
 }
 
 /** End Footer */

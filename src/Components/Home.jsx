@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import data from '../data';
+import Sidebar from "./Sidebar";
 
 const Home = () => {
     const post = data.flatMap(user => user.post);
@@ -20,7 +21,7 @@ const Home = () => {
                 ))
             }
             </div>
-            <div id="sidebar"></div>
+            <Sidebar/>
         </>
     )
 }

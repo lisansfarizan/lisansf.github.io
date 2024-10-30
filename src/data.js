@@ -12,6 +12,7 @@ const user = [
                 "link": "/toram-online-guide",
                 "img": "/img/toram background.jpeg",
                 "date": "",
+                "tags": ["MMORPG", "Games Online", "Toram Online"],
                 "shortdesc": "Panduan untuk bermain Toram Online.",
                 "desc": "ini deskripsi Panjangnya kalo udah klik postingannya"
             },
@@ -20,6 +21,7 @@ const user = [
                 "link": "/leveling-toram-online-1-250",
                 "img": "/img/veo-toram.jpg",
                 "date": "",
+                "tags": ["MMORPG", "Games Online", "Toram Online"],
                 "shortdesc": "Cari jalur cepat untuk Leveling?",
                 "desc": "ini deskripsi Panjangnya kalo udah klik postingannya"
             },
@@ -28,6 +30,7 @@ const user = [
                 "link": "/toram-online-mq",
                 "img": "/img/toram background.jpeg",
                 "date": "",
+                "tags": ["MMORPG", "Games Online", "Toram Online"],
                 "shortdesc": "Kamu bingung dengan bahan-bahan quest?",
                 "desc": "ini deskripsi Panjangnya kalo udah klik postingannya"
             }
@@ -45,6 +48,7 @@ const user = [
                 "link": "/hp-terbaru-2025",
                 "img": "",
                 "date": "",
+                "tags": ["Elektronik"],
                 "shortdesc": "HP baru di tahun 2025 ini sangat bagus!",
                 "desc": "ini deskripsi Panjangnya kalo udah klik postingannya"
             }

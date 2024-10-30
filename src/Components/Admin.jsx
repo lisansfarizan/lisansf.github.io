@@ -42,7 +42,7 @@ const Login = () => {
 
     return (
         <>
-        <Helmet title='Login | VEO Veneht'/>
+        <Helmet title='Admin | VEO Veneht'/>
             <div id='login-form'>
                 <form onSubmit={onLogin}>
                     <div id='input-wrapper'>
