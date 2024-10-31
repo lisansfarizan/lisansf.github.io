@@ -7,6 +7,7 @@ Disallow: /login/
 Disallow: /register/
 Disallow: /private/
 Disallow: /search
+Sitemap: https://veoveneht.my.id/sitemap.xml
 
 # Allow Googlebot to index everything, even things disallowed for other crawlers
 User-agent: Googlebot

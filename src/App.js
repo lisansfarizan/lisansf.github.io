@@ -46,6 +46,7 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/cookies' element={<Cookies />} />
+              <Route path='/sitemap.xml' element={<Admin />} />
               <Route path='/post/:postUrl' element={<Posts />} />
           </Routes>
           </div>
